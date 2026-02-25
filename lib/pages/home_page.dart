@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
       description:
           'Our signature Jollof rice, cooked to perfection, served with succulent fried chicken.',
       price: '₦3,500',
+      id: 1,
     ),
     Special(
       name: 'Spicy Tilapia Pepper Soup',
@@ -29,6 +30,7 @@ class HomePage extends StatelessWidget {
       description:
           'A comforting and spicy soup with tender tilapia fish, a true Nigerian delicacy.',
       price: '₦3,500',
+      id: 2,
     ),
     Special(
       name: 'Semo & Soups',
@@ -36,6 +38,7 @@ class HomePage extends StatelessWidget {
       description:
           'Smooth, stretchy semo served with rich, flavorful Nigerian soup made with fresh ingredients and traditional spices.',
       price: '₦3,500',
+      id: 3,
     ),
   ];
 

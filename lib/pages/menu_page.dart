@@ -21,6 +21,7 @@ class _MenuPageState extends State<MenuPage> {
       description:
           'Our signature Jollof rice, served with crispy fried chicken and plantain.',
       icon: Icons.add,
+      id: 1,
     ),
 
     Popular(
@@ -30,6 +31,7 @@ class _MenuPageState extends State<MenuPage> {
       description:
           'A rich and hearty Nigerian delicacy made with smooth, stretchy semolina swallow served alongside thick flavorful egusi soup.',
       icon: Icons.add,
+      id: 2,
     ),
 
     Popular(
@@ -39,6 +41,7 @@ class _MenuPageState extends State<MenuPage> {
       description:
           'A spicy and aromatic Nigerian classic made with a rich blend of traditional pepper soup spices.',
       icon: Icons.add,
+      id: 3,
     ),
   ];
   @override
@@ -202,7 +205,7 @@ class _MenuPageState extends State<MenuPage> {
             const SizedBox(height: 10),
             ...menuCategories.map((popular) {
               return Container(
-                margin: EdgeInsets.only(bottom: 20),
+                margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: Colors.white,
@@ -267,6 +270,7 @@ class _MenuPageState extends State<MenuPage> {
                             price: popular.price,
                             imagePath: popular.imagePath,
                             description: popular.description,
+                            id: popular.id,
                           ),
                         );
                         Navigator.pushNamed(context, '/cartPage');
@@ -309,7 +313,7 @@ class _MenuPageState extends State<MenuPage> {
             const SizedBox(height: 10),
             ...menuCategories.map((popular) {
               return Container(
-                margin: EdgeInsets.only(bottom: 16),
+                margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: Colors.white,
@@ -374,6 +378,7 @@ class _MenuPageState extends State<MenuPage> {
                             price: popular.price,
                             imagePath: popular.imagePath,
                             description: popular.description,
+                            id: popular.id,
                           ),
                         );
                         Navigator.pushNamed(context, '/cartPage');
@@ -416,7 +421,7 @@ class _MenuPageState extends State<MenuPage> {
             const SizedBox(height: 10),
             ...menuCategories.map((popular) {
               return Container(
-                margin: EdgeInsets.only(bottom: 16),
+                margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: Colors.white,
@@ -481,6 +486,7 @@ class _MenuPageState extends State<MenuPage> {
                             price: popular.price,
                             imagePath: popular.imagePath,
                             description: popular.description,
+                            id: popular.id,
                           ),
                         );
                         Navigator.pushNamed(context, '/cartPage');

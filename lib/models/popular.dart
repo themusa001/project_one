@@ -6,6 +6,7 @@ class Popular {
   final String imagePath;
   final String description;
   final IconData icon;
+  final int id;
 
   Popular({
     required this.name,
@@ -13,5 +14,6 @@ class Popular {
     required this.imagePath,
     required this.description,
     required this.icon,
+    required this.id,
   });
 }

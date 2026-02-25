@@ -75,7 +75,15 @@ class CartPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(6),
                               color: Color(0xFFBDBDBD),
                             ),
-                            child: Icon(Icons.add),
+                            child: IconButton(
+                              onPressed: () {
+                                Provider.of<CartProvider>(
+                                  context,
+                                  listen: false,
+                                ).increaseQuantity(item.id);
+                              },
+                              icon: Icon(Icons.add),
+                            ),
                           ),
                           SizedBox(width: 10),
                           Text(
@@ -92,7 +100,15 @@ class CartPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(6),
                               color: Color(0xFFBDBDBD),
                             ),
-                            child: Icon(Icons.remove),
+                            child: IconButton(
+                              onPressed: () {
+                                Provider.of<CartProvider>(
+                                  context,
+                                  listen: false,
+                                ).increaseQuantity(item.id);
+                              },
+                              icon: Icon(Icons.remove),
+                            ),
                           ),
                         ],
                       ),
