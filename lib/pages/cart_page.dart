@@ -87,7 +87,7 @@ class CartPage extends StatelessWidget {
                           ),
                           SizedBox(width: 10),
                           Text(
-                            '1',
+                            item.quantity.toString(),
                             style: GoogleFonts.inter(
                               fontSize: 20.74,
                               fontWeight: FontWeight.w500,
@@ -105,7 +105,7 @@ class CartPage extends StatelessWidget {
                                 Provider.of<CartProvider>(
                                   context,
                                   listen: false,
-                                ).increaseQuantity(item.id);
+                                ).decreasedQuantity(item.id);
                               },
                               icon: Icon(Icons.remove),
                             ),

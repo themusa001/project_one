@@ -22,11 +22,15 @@ class CartProvider extends ChangeNotifier {
 
   void decreasedQuantity(int productId) {
     final index = _items.indexWhere((value) => value.id == productId);
-    if (index > 1) {
-      _items[index].quantity--;
+    if (index != -1) {
+      if (_items[index].quantity > 1) {
+        _items[index].quantity--;
+        notifyListeners();
+      } else {
+        (_items.removeAt(index));
+      }
       notifyListeners();
-    } else
-      (_items.removeAt(index));
+    }
   }
 
   void removeItem(Special item) {
