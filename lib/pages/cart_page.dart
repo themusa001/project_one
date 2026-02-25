@@ -28,15 +28,101 @@ class CartPage extends StatelessWidget {
         itemCount: cart.items.length,
         itemBuilder: (context, index) {
           final item = cart.items[index];
-          return ListTile(
-            leading: Image.asset(item.imagePath, width: 50),
-            title: Text(item.name),
-            subtitle: Text(item.price),
-            trailing: IconButton(
-              onPressed: () {
-                cart.removeItem(item);
-              },
-              icon: Icon(Icons.delete, color: Colors.red),
+          return Container(
+            decoration: BoxDecoration(
+              border: Border.all(width: 1, color: Colors.grey),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            padding: EdgeInsets.all(15),
+            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+            width: double.infinity,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(
+                    item.imagePath,
+                    width: 90,
+                    height: 90,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+
+                SizedBox(width: 10),
+
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        item.name,
+                        style: GoogleFonts.inter(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+
+                      SizedBox(height: 8),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: Color(0xFFBDBDBD),
+                            ),
+                            child: Icon(Icons.add),
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            '1',
+                            style: GoogleFonts.inter(
+                              fontSize: 20.74,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: Color(0xFFBDBDBD),
+                            ),
+                            child: Icon(Icons.remove),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 8),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            item.price,
+                            style: GoogleFonts.inter(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFFFF7A18),
+                            ),
+                          ),
+
+                          IconButton(
+                            onPressed: () {
+                              cart.removeItem(item);
+                            },
+                            icon: Icon(Icons.delete, color: Colors.red),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           );
         },
